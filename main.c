@@ -3,7 +3,7 @@
 
 #include <psp2kern/kernel/modulemgr.h>
 
-static SceUID inject_id[5];
+static SceUID inject_id[2];
 
 void _start() __attribute__((weak, alias("module_start")));
 int module_start(SceSize argc, const void *args)
@@ -21,7 +21,7 @@ int module_start(SceSize argc, const void *args)
                                         0x97a6,
                                         &b_5,
                                         sizeof(b_5));
-  inject_id[0] = taiInjectDataForKernel(KERNEL_PID,
+  inject_id[1] = taiInjectDataForKernel(KERNEL_PID,
                                         info.modid,
                                         0,
                                         0x9814,
